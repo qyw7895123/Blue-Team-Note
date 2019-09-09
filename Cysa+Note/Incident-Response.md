@@ -92,4 +92,15 @@ to known bad hosts
 * The system should isolated before restoring from backups.
 * MBR-, UEFI-, and BIOS-resident malware packages can all survive a drive wipe
 * Minimum retention period for incident data for U.S. federal government agencies is 3 years.
+* NIST recommendations of a evidence log should includes host name, IP, MAC address
+* APTs send traffic in an encrypted form, network forensics for traffic analysis will only provide information about potentially infected hosts. **Endpoint forensics** is the technique to detect the APT infections.
+* Copying new files over old files can leave remnant data, to prove the old file were on the system by examining slack space.
+* In a incident, proprietary information was changed, how should we classify this incident?
+  * AS an integrity loss
+* Windows does not include a built-in secure erase tool in the GUI or at command line.
+* Data contain **merger and acquisition information as well as accounting data** is considered as **Corporate confidential data.**
+* **Profiling networks and systems** will provide a baseline behavior set for **anomaly analysis**. A SIEM or similar system can monitor for differences or anomalies that are recorded as events. Behavioral analysis does not need a baseline.
+* What will a Windows system restore return to a previous state?
+  * Windows system files
+* The **File system audit  subcategory** includes the ability to monitor for both access to objects ID 4663 and permission changes ID 4670.
 * 

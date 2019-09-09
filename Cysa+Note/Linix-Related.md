@@ -8,4 +8,6 @@
 * Ways to check for unexpected accounts:
   * /etc/passed and /etc/shadow, /etc/sudoers, /etc/groups
 * /etc/pam.d PAM Pluggable authentication module. Checking for multifactor authentication configurations.
-  
+* Services are often started by xinetd (although newer versions of some distributions now use systemctl). 
+  * For checking back doors associated with services go for /etc/xinetd.conf
+* There is no common standard for determining the age of a user account in Linux. Some organizations add a comment to user accounts using the -c flag for user creation to note when they are created.
