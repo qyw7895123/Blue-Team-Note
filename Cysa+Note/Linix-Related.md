@@ -11,3 +11,7 @@
 * Services are often started by xinetd (although newer versions of some distributions now use systemctl). 
   * For checking back doors associated with services go for /etc/xinetd.conf
 * There is no common standard for determining the age of a user account in Linux. Some organizations add a comment to user accounts using the -c flag for user creation to note when they are created.
+* The apache web server stares log files in a file named **access_log**
+* What is the closest Linux equivalent command to **runas** in Windows?
+  * sudo
+* Fmem and LIME are both Linux-only kernel modules that provide access to physical memory.

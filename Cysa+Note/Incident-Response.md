@@ -103,4 +103,11 @@ to known bad hosts
 * What will a Windows system restore return to a previous state?
   * Windows system files
 * The **File system audit  subcategory** includes the ability to monitor for both access to objects ID 4663 and permission changes ID 4670.
-* 
+* Security incident validation effort?
+  * Patching
+  * Permissions
+  * Scanning
+  * Verifying logging
+* **Sampling** is often used to retain flow visibility while reducing the overall flow rates to reasonable level.
+  * Decrease the number of flows allowed for each user and use packet shaping to reduce traffic rates to one that the flow collector can keep up with would cause the network to be less usable.
+  * 
