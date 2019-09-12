@@ -49,7 +49,7 @@
     * Formal testing of controls resulting in formal declaration by the auditor of compliance
   * Assessments
     * Less formal review of security controls
-    * Usually request by the organization itself for process improvement purposes
+    * Usually request by the organization itself for **process improvement** purposes
   * **Laws and regulations**
     * HIPPA Health portability and accountability act. Health related.
     * GLBA Gramm-Leach-Bliley act. Financial institutions related. Must designate a "responsible" individual.
@@ -212,13 +212,13 @@ internet <==> router <==> firewall <==> switch <==> firewall <==> intranet
     * How will you be notified if there is a breach?
     * Or, will you even be notified if there is a breach?
 * **Analyzing secure architectures**
-  * **Review architectures**
+  * **Review Architectures**
     * **Operational view**
       * Focus on how a function is performed or is supposed to accomplish
     * **Technical View**
       * Focuses on technologies, configurations, and settings used in an architecture (system or service)
     * **Logical View**
-      * Focuses on the interconnections of systems with less technical details than the technical view
+      * Focuses on the **interconnections** of systems with less technical details than the technical view. High-level functional view of how data flows between systems.
   * **Common Issues**
     * Single points of failure
     * Data validation and trust
@@ -262,7 +262,7 @@ internet <==> router <==> firewall <==> switch <==> firewall <==> intranet
       * Microsoft's active directory, Oracle's Internet directory, IBM's security directory, OpenLDAP, 389 Directory server, ApacheDS, and OpenDJ
       * Can be used to make organizational information available to email and other programs
   * LDAP directory structure 
-    * dc = domain name
+    * dn = domain name
     * ou = organizational unit
     * cn = common name
   * Securing LDAP
@@ -289,8 +289,8 @@ internet <==> router <==> firewall <==> switch <==> firewall <==> intranet
       * RADIUS
         * Remote Authentication Dial-in service
         * Most common AAA for networks, wireless networks, and other services
-        * Operates over TCP or UDP in a client0server model
-        * Password obscured using shared secret and MD5 hash (not strong)
+        * Operates over TCP or UDP in a client-server model
+        * Password obscured using shared secret and MD5 hash (not strong). May facing brute force attack.
         * RADIUS traffic should be encrypted using IPSec between endpoints
       * Kerberos
         * Operates on untrusted networks using encryption of its data
@@ -416,6 +416,128 @@ internet <==> router <==> firewall <==> switch <==> firewall <==> intranet
     * XML-based language to send authentication and authorization data between IDP and RP
     * Used to enable SSO for web apps & services
   * **OAuth and OAuth 2.0**
-    * Developed by the Internet Engineering Task Force (IETF) to provide an authorization framework to allow service provider applications to access HTTP0based services
+    * Developed by the Internet Engineering Task Force (IETF) to provide an authorization framework to allow service provider applications to access HTTP-based services
   * **Flickr federated example (OAuth Authentication process)**
-    * 
+  * **Active directory federation services ADFS**
+    * Microsoft's federated identities
+    * Works similar to the OAuth authentication process
+* **Software development life cycle SDLC**
+  * Mainly follow this 8 basic functions/phases
+  * Planning for security early in the process will provide better security at a cheaper price
+  * **Planning**
+    * Initial research 
+    * Determines feasibility of designing the desired software, costs, and any alternate solutions
+    * Decision to move forward or not
+  * **Requirements**
+    * Determine required functionality
+    * What should or should not the program do?
+    * Insert cybersecurity concern here
+  * **Design**
+    * Creates designs for functionality, architecture, integration points, techniques, data flows, processes, and other elements
+  * **Coding**
+    * Start writing the code and conduct testing of individual units of code and through code analysis
+  * **Testing**
+    * Formal testing with outside development team
+    * User acceptance testing ensure users are satisfied with the functionality
+  * **Training and transition**
+    * Ensures the end users are trained on software
+    * Consists of acceptance, installation, and deployment of software into live environment
+  * **Operations and maintenance**
+    * Longest phase of the SDLC
+    * Patching, updating, modification, and daily support
+  * **End of life**
+    * Disposition and retirement
+* **Software development models**
+  * **Waterfall model**
+    * Linear model wth each phase following the previous phase
+      * Requirements
+        * Design
+          * Implementation
+            * Verification
+              * Maintenance
+  * **Spiral model**
+    * Modification of waterfall, it adds iterative process to revisit phases over and over
+    * Faster than waterfall. 
+  * **Agile**
+    * Fastest
+    * Individuals and interactions are most important
+    * Working software is better than the documentation
+    * Customer collaboration over contract negotiation
+    * Responding to changes fast is better than a plan
+  * **RAD Rapid application development**
+    * Iterative process relying on building prototypes
+    * No planning phase just start coding
+  * **Big bang SDLC model**
+    * Doesn't scale well, works est for single coder
+    * No planning or process
+  * **V model**
+    * Extension of the waterfall which pairs testing and development phases together
+* **Coding for security**
+  * Secure coding practices
+    * Organizational secure coding policy
+    * Risk assessments
+    * User input validation
+    * Error messages
+      * Not too much information given on error
+    * Database security
+      * Prevents data leaks
+    * Encrypt sensitive information being stored
+    * Hash passwords
+    * Availability and scalability
+      * Load and stress testing
+    * Monitoring and logging
+    * Multifactor authentication
+    * Secure session management
+    * Proper cookie management
+    * Encrypt network traffic TLS
+    * Secure the underlying infrastructure
+  * **Open web application security project OWASP**
+  * **Source code management**
+    * Check-in/check-out and revision history to ensure you know what code is current version
+* **Testing application code**
+  * Pair programming. One driver one coder
+  * Over the shoulder. Developer who coded software explains it to another developer
+  * Pass-around. Form of review with one or more reviewers
+  * Tool-assisted. 
+  * Fagan.
+    * Structured formal code review by a team of reviwers
+    * Costly and harder to implement
+* **Finding security flaws**
+  * Static analysis
+    * Reviewing the cde manually or with an auto mated tool
+    * Code is not run
+    * Form of white-box testing
+  * Dynamic analysis
+    * Code executed while providing specific input
+    * Uses automated tools or manual input
+    * Types
+      * Fuzzing
+        * Sending random data to test error handling ability of a application
+      * Fault injection
+        * Directly inserts faults into error handling parts of the code to test them 
+          * Compile-time injection
+          * Protocol software injection
+          * Runtime injection
+      * Mutation testing
+        * Makes small changes to the program itself to determine they would cause a failure
+        * Testing for unexpected input types
+      * Stress testing or load testing
+        * ensures applications and systems can support the expected production load
+        * Automated tools to stress an expected load and determine if it;s handled properly
+        * Can be against entire system or single component
+      * Security regression testing
+        * Ensures any changes made do not create new problems or issues in the app
+        * Used mostly on new patch or updates
+* **Web app vulnerability scanning** 
+  * Nessus, Nexpose, and OpenVAS
+  * Acunetix
+  * Manual scanning
+    * Uses and interception proxy to capture communications between browser and server
+    * Modify data sent and received
+      * Tamper data for firefox and Chrome
+      * HttpFox
+      * Fidder
+      * Brup Suite
+  * Outsource your scanning
+    * Better on identify business logic issues and other flaws
+    * Provide static and dynamic analysis
